@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about.css">
+    <title>Document</title>
+
+    <style>
+
+        section
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        .plane
+        {
+            position: absolute;
+            /* text-align: center; */
+        }
+
+        .plane img
+        {
+            min-width: 700px;
+            max-width: 1000px;
+            animation: animatePlane 1.5s linear infinite;
+            animation-iteration-count: 1;
+            /* animation-delay: 0.5s; */
+        }
+
+
+        @keyframes animatePlane
+        {
+            0%
+            {
+                transform: translateX(100%);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <ul style="list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            ">
+        <li><a class="active" href="home.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="news.html">News</a></li>
+    </ul>
+
+    <div class="info">
+        <h1>About us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt dolorem veritatis quam nulla. Nulla, ipsa, pariatur voluptates eos laborum odit rerum eligendi impedit molestiae aspernatur maxime voluptatibus, minus tenetur. Optio!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde culpa consequuntur dolorem necessitatibus excepturi nesciunt iusto aut beatae placeat animi, aspernatur dolorum perferendis id fuga nobis voluptate, voluptatem quis in.</p>
+    </div>
+
+    <section>
+        
+        <div class="plane">
+            <img src="https://sv1.img.in.th/dSDxL.png">
+        </div>
+        <!-- ภาพ pilot และ pilot2 ซ้อนกัน -->
+        <div class="pilot">
+            <img src="https://sv1.picz.in.th/images/2022/11/28/GUbgn2.png">
+        </div>
+        <div class="pilot2">
+            <img src="https://sv1.picz.in.th/images/2022/11/28/GUbgn2.png">
+        </div>
+        <div class="cabincrew">
+            <img src="https://sv1.picz.in.th/images/2022/11/28/GUbNxl.png">
+        </div>
+        <div class="engineer">
+            <img src="https://sv1.picz.in.th/images/2022/11/28/GUOIWR.png">
+        </div>
+
+    </section>
+
+   
+    
+</body>
+</html>

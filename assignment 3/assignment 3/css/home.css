@@ -1,0 +1,281 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background: #dadada; */
+}
+
+li 
+{
+    float: left;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+li a 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 26px;
+    text-decoration: none;
+    /* font-family: monospace; */
+}
+
+li a:hover 
+{
+    background-color: #333;
+}
+
+h1
+{
+    margin-bottom: 20px;
+}
+
+.info
+{
+    width: 300px;
+    position: absolute;
+    margin: 60px;
+    opacity: 1;
+    transition: opacity 1s;
+    transition-delay: 2s;
+}
+
+.guide
+{
+    position: fixed;
+    background-color: rgb(212, 127, 0);
+    color: #fff;
+    border-radius: 10px;
+    /* width: 300px; */
+    bottom: 0;
+    right: 0;
+    margin: 90px;
+    opacity: 1;
+    transition: opacity 1s;
+    transition-delay: 2s;
+}
+
+.guide2
+{
+    position: fixed;
+    background-color: #111;
+    color: #fff;
+    border-radius: 10px;
+    /* width: 300px; */
+    bottom: 0;
+    right: 0;
+    margin: 90px;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 2s;
+}
+
+.guide p
+{
+    margin: 10px;
+}
+
+.guide2 p
+{
+    margin: 10px;
+}
+
+.logo
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 450px;
+    /* margin-top: 0px; */
+    opacity: 1;
+    transition: opacity 1s;
+    transition-delay: 2s;
+}
+
+section
+{
+    display: flex;
+    justify-content: center;
+    font-size: 0;
+    align-items: center;
+    height: 100vh;
+    transition-delay: 1s;
+}
+
+.nav
+{
+    position: sticky;
+}
+
+
+.runway
+{
+    position: absolute;
+    width: 350px;
+    height: 100vh;
+    background: #7a7a7a;
+    border-left: 20px solid rgba(0,0,0,0.5);
+    border-right: 20px solid rgba(0,0,0,0.5);
+    transition: transform 1s;
+    transition-delay: 1s;
+    transform-origin: top;
+}
+
+.plane 
+{
+    position: absolute;
+    bottom: 100px;
+    max-width: 300px;
+    pointer-events: none;
+    filter: drop-shadow(10px 10px 0 rgba(0,0,0,0.5));
+    transition: 5s;
+}
+
+.cloudL
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0.5s;
+}
+
+
+.cloudL img
+{
+    position: absolute;
+    left: 0;
+    width: 80%;
+    animation: animateCloudsL 4s linear infinite;
+    animation-delay: calc(-1.5s * var(--i));
+}
+
+.cloudR
+{
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.cloudR img
+{
+    animation: animateCloudsR 4s linear infinite;
+    animation-delay: calc(-1.5s * var(--i));
+}
+
+:active .info
+{
+    opacity: 0;
+    font-size: 0;
+}
+
+:active .guide
+{
+    opacity: 0;
+}
+
+:active .guide2
+{
+    opacity: 1;
+}
+
+:active .logo
+{
+    opacity: 0;
+    transition-delay: 0.1s;
+}
+
+
+:active section
+{
+    transition-delay: 2s;
+    background: #034071;
+}
+
+:active .cloudL
+{
+    opacity: 1;
+    transition-delay: 2s;
+}
+
+:active .runway 
+{
+    transform: scaleX(0.6) scaleY(0);
+    transition-delay: 1s;
+    transform-origin: bottom;
+}
+
+:active .plane 
+{
+    max-width: 600px;
+    transition-delay: 1s;
+    filter: drop-shadow(200px 200px 0 rgba(0,0,0,0));
+}
+
+.runway::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 100%;
+    background: repeating-linear-gradient(transparent 0%, transparent 50%, #fff 50%, #fff 100%);
+    background-size: 20px 320px;
+    animation: animateRunway 0.75s linear infinite;
+    
+}
+
+:active .runway::before
+{
+    animation: animateRunway 0.30s linear infinite;
+
+}
+
+@keyframes animateCloudsL
+{
+    0%
+    {
+        transform: translateY(-100%);
+    }
+    100%
+    {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes animateCloudsR
+{
+    0%
+    {
+        transform: translateY(100%);
+    }
+    100%
+    {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes animateRunway
+{
+    0%
+    {
+        background-position-y: 0px;
+    }
+    100%
+    {
+        background-position-y: 640px;
+    }
+}
