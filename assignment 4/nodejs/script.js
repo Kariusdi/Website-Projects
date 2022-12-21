@@ -15,6 +15,7 @@ app.get('/news', (req, res) => {
 })
 
 app.get('*', (req, res) => {
+    console.log(__dirname + '/html/error.html')
     res.sendFile(__dirname + '/html/error.html')
 })
 
