@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 
+app.use(express.static(__dirname))
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname + '/html/home.html')
 })
 
@@ -15,7 +16,6 @@ app.get('/news', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    console.log(__dirname + '/html/error.html')
     res.sendFile(__dirname + '/html/error.html')
 })
 
